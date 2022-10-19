@@ -60,7 +60,7 @@ class AppButtons {
             _onTap();
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.transparent,
+            backgroundColor: Colors.transparent,
             padding: EdgeInsets.zero,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(50),
@@ -189,9 +189,9 @@ class AppButtons {
       BuildContext _context, String _image, Function _onTap) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         padding: EdgeInsets.zero,
-        primary: Colors.transparent,
-        onPrimary: Colors.white,
         shadowColor: Colors.transparent,
         elevation: 0,
       ),
@@ -211,9 +211,9 @@ class AppButtons {
       BuildContext _context, String _image, Function _onTap) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
         padding: EdgeInsets.zero,
-        primary: Colors.transparent,
-        onPrimary: Colors.white,
+        backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         elevation: 0,
       ),
@@ -236,9 +236,9 @@ class AppButtons {
   static Widget backButton(BuildContext _context, Color _color) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
         padding: EdgeInsets.zero,
-        primary: Colors.transparent,
-        onPrimary: Colors.white,
+        backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         elevation: 0,
       ),

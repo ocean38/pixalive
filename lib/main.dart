@@ -55,7 +55,6 @@ class MyApp extends StatelessWidget {
       /// Material App
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        // home: OnBoardingScreen(),
 
         /// Initial Route
         initialRoute: AppPrefrences.getIsTutorialVisited() != true

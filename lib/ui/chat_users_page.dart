@@ -39,9 +39,9 @@ class _ChatUsersPageState extends State<ChatUsersPage> {
           elevation: 0,
           leading: ElevatedButton(
             style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.white,
               padding: EdgeInsets.zero,
-              primary: Colors.transparent,
-              onPrimary: Colors.white,
+              backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
               elevation: 0,
             ),
