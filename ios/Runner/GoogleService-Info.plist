@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>562032516370-aopmnviinn85oel8jmf5vc6s32ehl2d3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.562032516370-aopmnviinn85oel8jmf5vc6s32ehl2d3</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>562032516370-gcnmkrr49o54e63iecb4lhfahjgcs7v8.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCKHkPUg3Rfj8rzuPLe8_ck8S-4eWPtPc8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>562032516370</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.pixalive</string>
+	<key>PROJECT_ID</key>
+	<string>pixalive-ab031</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pixalive-ab031.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:562032516370:ios:58d0e7950f8d8b0347a7cb</string>
+</dict>
+</plist>

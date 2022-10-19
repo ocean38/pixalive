@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "678385177359",
+    "project_id": "pixalive-ca74b",
+    "storage_bucket": "pixalive-ca74b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678385177359:android:8b48f183c30ebbe936e47a",
+        "android_client_info": {
+          "package_name": "com.example.pixalive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678385177359-0ue1dvs0o1hm8n3621b3clvlmud523tg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-Jx3uNDTPda7BDpokvgJyyfH_kmcu2hM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678385177359-0ue1dvs0o1hm8n3621b3clvlmud523tg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
