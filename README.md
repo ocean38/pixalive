@@ -9,7 +9,7 @@ Flutter documentation
 Dart language documentation
 Effective Dart: Style
 Setting up your local dev environment
-User Flutter version 2.8.1 (stable)
+User Flutter version 3.3.4 (stable)
 Prerequisites before working in VSCode:
 
 Install Java
