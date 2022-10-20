@@ -181,14 +181,18 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                               .forgotPasswordProvider(_email.text);
                       if (!_forgetPasswordResult == false) {
                         AppSnackbar.customSnackBar(
-                            "User Already exist", context);
+                          "User Already exist",
+                          context,
+                        );
                         return;
                       }
-                      final UserModel _user = UserModel();
-                      _user.name = _name.text;
-                      _user.userName = _userName.text;
-                      _user.email = _email.text;
-                      _user.password = _password.text;
+                      final UserModel _user = UserModel(
+                        name: _name.text,
+                        userName: _userName.text,
+                        email: _email.text,
+                        password: _password.text,
+                      );
+
                       final _result = await _fireStoreUserProvider
                           .createUserProvider(_user);
                       AppLoader.close();
