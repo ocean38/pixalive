@@ -27,10 +27,6 @@ class AppLoader {
   }
 
   static void close() {
-    if (_context != null) {
-      Navigator.of(_context!).pop();
-    } else {
-      return;
-    }
+    if (_context != null) Navigator.of(_context!).pop();
   }
 }

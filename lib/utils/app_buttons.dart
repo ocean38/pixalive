@@ -11,12 +11,13 @@ class AppButtons {
   //
   //------------------------Gradient Button------------------------
 
-  static Widget appGradientButton(
-      String _buttonName, Function _onTap, TextStyle _buttonTextStyle) {
+  static Widget appGradientButton({
+    required String buttonName,
+    required Function onTap,
+    required TextStyle buttonTextStyle,
+  }) {
     return ElevatedButton(
-      onPressed: () {
-        _onTap();
-      },
+      onPressed: onTap(),
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
@@ -30,15 +31,19 @@ class AppButtons {
               colors: AppColor.gradientColor,
               begin: Alignment.topLeft, //starting of the gradient color
               end: Alignment.bottomRight, //end of the gradient color
-              stops: [0, 0.5, 1] //stops for individual color
+              stops: <double>[
+                0,
+                0.5,
+                1,
+              ] //stops for individual color
               ),
         ),
         width: double.infinity,
         height: 55,
         alignment: Alignment.center,
         child: Text(
-          "$_buttonName",
-          style: _buttonTextStyle,
+          buttonName,
+          style: buttonTextStyle,
         ),
       ),
     );
@@ -48,17 +53,18 @@ class AppButtons {
   //
   //------------------------Transperent Button------------------------
 
-  static Widget appTransperentButton(
-      String _buttonName, Function _onTap, TextStyle _buttonTextStyle) {
+  static Widget appTransperentButton({
+    required String buttonName,
+    required Function onTap,
+    required TextStyle buttonTextStyle,
+  }) {
     return OutlineGradientButton(
       strokeWidth: 3,
       radius: Radius.circular(50),
       child: Container(
         width: double.infinity,
         child: ElevatedButton(
-          onPressed: () {
-            _onTap();
-          },
+          onPressed: onTap(),
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.transparent,
             padding: EdgeInsets.zero,
@@ -67,8 +73,8 @@ class AppButtons {
             ),
           ),
           child: Text(
-            "$_buttonName",
-            style: _buttonTextStyle,
+            buttonName,
+            style: buttonTextStyle,
           ),
         ),
       ),
@@ -83,22 +89,23 @@ class AppButtons {
   //
   //------------------------Social Button------------------------
 
-  static Widget socialAccountButton(
-      String _image, Color _color, Function _onTap) {
+  static Widget socialAccountButton({
+    required String image,
+    required Color color,
+    required Function onTap,
+  }) {
     return Container(
       height: 65,
       width: 65,
       child: ElevatedButton(
-        onPressed: () {
-          _onTap();
-        },
-        child: Image.asset(_image),
+        onPressed: onTap(),
+        child: Image.asset(image),
         style: ButtonStyle(
           padding: MaterialStateProperty.all(
             EdgeInsets.symmetric(vertical: 10.0),
           ),
           shape: MaterialStateProperty.all(CircleBorder()),
-          backgroundColor: MaterialStateProperty.all<Color>(_color),
+          backgroundColor: MaterialStateProperty.all<Color>(color),
         ),
       ),
     );
@@ -113,9 +120,7 @@ class AppButtons {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {
-          _onTap();
-        },
+        onPressed: _onTap(),
         style: ButtonStyle(
           padding: MaterialStateProperty.all(
             EdgeInsets.symmetric(horizontal: 40.0, vertical: 15.0),

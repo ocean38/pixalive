@@ -171,8 +171,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
 
                 // Create Account Button
                 AppButtons.appGradientButton(
-                  "Create",
-                  () async {
+                  buttonName: "Create",
+                  onTap: () async {
                     AppLoader.start(context);
                     final _from = _formKey.currentState;
                     if (_from!.validate()) {
@@ -201,7 +201,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                       _from.reset();
                     }
                   },
-                  AppTextStyle.white18W400,
+                  buttonTextStyle: AppTextStyle.white18W400,
                 ),
               ],
             ),

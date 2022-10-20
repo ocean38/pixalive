@@ -160,8 +160,8 @@ class _ViewProfileState extends State<ViewProfile> {
           Padding(
             padding: const EdgeInsets.all(30.0),
             child: AppButtons.appGradientButton(
-              "Logout",
-              () async {
+              buttonName: "Logout",
+              onTap: () async {
                 AppLoader.start(context);
                 await _socialAuthProvider.signOut();
                 AppLoader.close();
@@ -170,7 +170,7 @@ class _ViewProfileState extends State<ViewProfile> {
                   (Route<dynamic> route) => false,
                 );
               },
-              AppTextStyle.white18W400,
+              buttonTextStyle: AppTextStyle.white18W400,
             ),
           ),
         ],

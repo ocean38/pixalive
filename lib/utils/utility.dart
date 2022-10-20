@@ -12,13 +12,10 @@ class UtilityImage {
     );
   }
 
-  static Uint8List dataFromBase64String(String _base64String) {
-    return base64Decode(_base64String);
-  }
+  static Uint8List dataFromBase64String(String _base64String) =>
+      base64Decode(_base64String);
 
-  static String base64String(Uint8List _data) {
-    return base64Encode(_data);
-  }
+  static String base64String(Uint8List _data) => base64Encode(_data);
 }
 
 class UtiltyChatID {

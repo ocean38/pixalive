@@ -82,8 +82,8 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
 
                 // Create Account Button
                 AppButtons.appGradientButton(
-                  "Submit",
-                  () async {
+                  buttonName: "Submit",
+                  onTap: () async {
                     final _from = _formKey.currentState;
                     if (_from!.validate()) {
                       AppLoader.start(context);
@@ -106,7 +106,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                       _from.reset();
                     }
                   },
-                  AppTextStyle.white18W400,
+                  buttonTextStyle: AppTextStyle.white18W400,
                 ),
               ],
             ),

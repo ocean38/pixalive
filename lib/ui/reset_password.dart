@@ -119,8 +119,8 @@ class _ResetPasswordState extends State<ResetPassword> {
 
                 // Create Account Button
                 AppButtons.appGradientButton(
-                  "Done",
-                  () async {
+                  buttonName: "Done",
+                  onTap: () async {
                     final FormState? _from = _formKey.currentState;
                     if (_from!.validate()) {
                       if (_newPassword.text == _confirmPassword.text) {
@@ -128,7 +128,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                             .resetPasswordProvider(_newPassword.text);
                         if (_result == ExceptionConstants.exception) {
                           AppSnackbar.customSnackBar(
-                              "SomeThing went wrong!", context);
+                            "SomeThing went wrong!",
+                            context,
+                          );
                         } else if (_result) {
                           Navigator.pushReplacementNamed(
                             context,
@@ -136,16 +138,20 @@ class _ResetPasswordState extends State<ResetPassword> {
                           );
                         } else {
                           AppSnackbar.customSnackBar(
-                              "Unable to change ur password !", context);
+                            "Unable to change ur password !",
+                            context,
+                          );
                         }
                       } else {
                         AppSnackbar.customSnackBar(
-                            "Password must be same", context);
+                          "Password must be same",
+                          context,
+                        );
                       }
                       _from.reset();
                     }
                   },
-                  AppTextStyle.white18W400,
+                  buttonTextStyle: AppTextStyle.white18W400,
                 ),
               ],
             ),

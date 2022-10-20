@@ -12,23 +12,24 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
-  PageController _controller = PageController(
+  final PageController _controller = PageController(
     initialPage: 0,
   );
-  int _currentPage = 0;
 
-  final List _pageViewList = [
-    Page1(),
-    Page2(),
-    Page3(),
+  final List<Widget> _pageViewList = <Widget>[
+    Pages(title: "Page 1"),
+    Pages(title: "Page 2"),
+    Pages(title: "Page 3"),
   ];
+
+  int _currentPage = 0;
   Timer? _timer;
 
   void _automaticScroll() {
     int page = 0;
     _timer = Timer.periodic(
       Duration(seconds: 2),
-      (timer) {
+      (Timer timer) {
         _controller.animateToPage(
           ++page,
           duration: Duration(milliseconds: 300),
@@ -56,10 +57,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: GestureDetector(
-        onLongPressStart: (index) {
+        onLongPressStart: (LongPressStartDetails _) {
           _timer?.cancel();
         },
-        onLongPressEnd: (index) {
+        onLongPressEnd: (LongPressEndDetails _) {
           _automaticScroll();
         },
         child: SafeArea(
@@ -69,12 +70,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: PageView.builder(
                   controller: _controller,
                   scrollDirection: Axis.horizontal,
-                  onPageChanged: (index) {
+                  onPageChanged: (int index) {
                     setState(() {
                       _currentPage = index % _pageViewList.length;
                     });
                   },
-                  itemBuilder: (context, index) {
+                  itemBuilder: (BuildContext context, int index) {
                     return _pageViewList[index % _pageViewList.length];
                   },
                 ),
@@ -87,7 +88,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     Row(
                       children: List.generate(
                         _pageViewList.length,
-                        (index) => _indicator(index),
+                        (int index) => _indicator(index),
                       ),
                     ),
                     ElevatedButton(
@@ -111,10 +112,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       style: ButtonStyle(
                         padding: MaterialStateProperty.all(
                           EdgeInsets.symmetric(
-                              horizontal: 40.0, vertical: 15.0),
+                            horizontal: 40.0,
+                            vertical: 15.0,
+                          ),
                         ),
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(AppColor.salmon),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          AppColor.salmon,
+                        ),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
@@ -153,54 +157,43 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 }
 
-class Page1 extends StatelessWidget {
+class Pages extends StatelessWidget {
+  final String title;
+
+  const Pages({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return _walkThroughPages(title: "Page 1", context: context);
-  }
-}
-
-class Page2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return _walkThroughPages(title: "Page 2", context: context);
-  }
-}
-
-class Page3 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return _walkThroughPages(title: "Page 3", context: context);
-  }
-}
-
-Widget _walkThroughPages({String? title, context}) {
-  return Scaffold(
-    backgroundColor: Colors.white,
-    body: Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Image.asset(
+              AppImages.onBoardingScreen,
+              height: MediaQuery.of(context).size.width * 0.90,
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.fill,
+            ),
+            Text(
+              title,
+              style: AppTextStyle.black24W700,
+            ),
+            Text(
+              "Lorem Ipsum is simply dummy text of the the printing and typesetting industry. Lorem Ipsum has been the industry.",
+              style: AppTextStyle.grey18Shade700,
+            ),
+          ],
+        ),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Image.asset(
-            AppImages.onBoardingScreen,
-            height: MediaQuery.of(context).size.width * 0.90,
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.fill,
-          ),
-          Text(
-            title.toString(),
-            style: AppTextStyle.black24W700,
-          ),
-          Text(
-            "Lorem Ipsum is simply dummy text of the the printing and typesetting industry. Lorem Ipsum has been the industry.",
-            style: AppTextStyle.grey18Shade700,
-          ),
-        ],
-      ),
-    ),
-  );
+    );
+  }
 }

@@ -162,8 +162,8 @@ class _LoginPageState extends State<LoginPage> {
 
                 // Login Button
                 AppButtons.appGradientButton(
-                  "Log In",
-                  () async {
+                  buttonName: "Log In",
+                  onTap: () async {
                     final FormState? _from = _formKey.currentState;
                     if (_from!.validate()) {
                       AppLoader.start(context);
@@ -176,7 +176,9 @@ class _LoginPageState extends State<LoginPage> {
                       if (_result == ExceptionConstants.exception) {
                         Navigator.pop(context);
                         AppSnackbar.customSnackBar(
-                            "Email ID or password must be wrong !", context);
+                          "Email ID or password must be wrong !",
+                          context,
+                        );
                       } else {
                         Navigator.of(context).pushNamedAndRemoveUntil(
                           AppRoutes.homePage,
@@ -186,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
                       _from.reset();
                     }
                   },
-                  AppTextStyle.white18W400,
+                  buttonTextStyle: AppTextStyle.white18W400,
                 ),
 
                 SizedBox(height: _screensize.height * 0.025),
@@ -209,9 +211,9 @@ class _LoginPageState extends State<LoginPage> {
 
                     // FaceBook Button
                     AppButtons.socialAccountButton(
-                      AppImages.facebookImage,
-                      AppColor.facebookBlue,
-                      () async {
+                      image: AppImages.facebookImage,
+                      color: AppColor.facebookBlue,
+                      onTap: () async {
                         AppLoader.start(context);
                         final _result =
                             await _socialAuthProvider.fbSignInProvider();
@@ -232,9 +234,9 @@ class _LoginPageState extends State<LoginPage> {
 
                     // Google Button
                     AppButtons.socialAccountButton(
-                      AppImages.googleImage,
-                      AppColor.googleRed,
-                      () async {
+                      image: AppImages.googleImage,
+                      color: AppColor.googleRed,
+                      onTap: () async {
                         AppLoader.start(context);
                         final result =
                             await _socialAuthProvider.googleSignInProvider();
@@ -256,9 +258,9 @@ class _LoginPageState extends State<LoginPage> {
 
                     // Apple Button
                     AppButtons.socialAccountButton(
-                      AppImages.appleLogo,
-                      AppColor.black,
-                      () async {
+                      image: AppImages.appleLogo,
+                      color: AppColor.black,
+                      onTap: () async {
                         if (IO.Platform.isIOS) {
                           AppLoader.start(context);
                           final _result =

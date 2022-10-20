@@ -30,7 +30,7 @@ class _WelcomePageState extends State<WelcomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
+              children: <Widget>[
                 // Play Button Icon
                 Image.asset(
                   AppImages.welcomeScreenPlayIcon,
@@ -49,28 +49,28 @@ class _WelcomePageState extends State<WelcomePage> {
 
                 // Create Account Button
                 AppButtons.appGradientButton(
-                  "Create Account",
-                  () {
+                  buttonName: "Create Account",
+                  buttonTextStyle: AppTextStyle.white18W400,
+                  onTap: () {
                     Navigator.pushNamed(
                       context,
                       AppRoutes.createAccountPage,
                     );
                   },
-                  AppTextStyle.white18W400,
                 ),
 
                 SizedBox(height: _screensize.height * 0.02),
 
                 // Login Button
                 AppButtons.appTransperentButton(
-                  "Log In",
-                  () {
+                  buttonName: "Log In",
+                  buttonTextStyle: AppTextStyle.white18W400,
+                  onTap: () {
                     Navigator.pushNamed(
                       context,
                       AppRoutes.loginPage,
                     );
                   },
-                  AppTextStyle.white18W400,
                 ),
 
                 SizedBox(height: _screensize.height * 0.03),
